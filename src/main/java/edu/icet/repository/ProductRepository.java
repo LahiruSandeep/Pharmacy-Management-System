@@ -1,6 +1,5 @@
 package edu.icet.repository;
 
-import edu.icet.entity.CustomerEntity;
 import edu.icet.entity.ProductEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
