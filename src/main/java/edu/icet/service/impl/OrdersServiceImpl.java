@@ -29,4 +29,31 @@ public class OrdersServiceImpl implements OrdersService {
         repository.findAll().forEach(orders -> ordersList.add(mapper.map(orders, Orders.class)));
         return ordersList;
     }
+
+    @Override
+    public void deleteById(Integer orderId) {
+        repository.deleteById(orderId);
+    }
+
+    @Override
+    public List<Orders> searchByUserName(String userName) {
+        List<Orders> ordersList = new ArrayList<>();
+        repository.findByUserName(userName).forEach(entity -> ordersList.add(mapper.map(entity, Orders.class)));
+        return ordersList;
+    }
+
+
+    @Override
+    public List<Orders> searchByContactNumber(String contactNumber) {
+        List<Orders> ordersList = new ArrayList<>();
+        repository.findByContactNumber(contactNumber).forEach(entity -> ordersList.add(mapper.map(entity, Orders.class)));
+        return ordersList;
+    }
+
+    @Override
+    public List<Orders> searchByAddress(String address) {
+        List<Orders> ordersList = new ArrayList<>();
+        repository.findByAddress(address).forEach(entity -> ordersList.add(mapper.map(entity, Orders.class)));
+        return ordersList;
+    }
 }

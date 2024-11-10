@@ -1,14 +1,11 @@
 package edu.icet.controller;
 
-import edu.icet.dto.Customer;
 import edu.icet.dto.Product;
 import edu.icet.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.List;
 
 @RestController

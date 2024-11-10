@@ -26,4 +26,32 @@ public class OrdersController {
     public List<Orders> getOrder() {
         return ordersService.getOrder();
     }
+
+    @DeleteMapping("delete-by-id/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void deleteById(@PathVariable Integer id){
+        ordersService.deleteById(id);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateOrder(@RequestBody Orders orders){
+        ordersService.addOrder(orders);
+    }
+
+    @GetMapping("/search-by-username/{userName}")
+    public List<Orders> searchByUsername(@PathVariable String userName){
+        return ordersService.searchByUserName(userName);
+    }
+
+    @GetMapping("/search-by-contactNumber/{contactNumber}")
+    public List<Orders> searchByContactNumber(@PathVariable String contactNumber){
+        return ordersService.searchByContactNumber(contactNumber);
+    }
+
+    @GetMapping("/search-by-address/{address}")
+    public List<Orders> searchByAddress(@PathVariable String address){
+        return ordersService.searchByAddress(address);
+    }
+
 }
